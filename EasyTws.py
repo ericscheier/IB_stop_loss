@@ -285,6 +285,15 @@ class TestApp(TestWrapper, TestClient):
         self.reqAccountUpdates(False, self.account)
 
     @iswrapper
+    # ! [managedaccounts]
+    def managedAccounts(self, accountsList: str):
+        super().managedAccounts(accountsList)
+        print("Account list: ", accountsList)
+        # ! [managedaccounts]
+
+        self.account = accountsList.split(",")[0]
+
+    @iswrapper
     # ! [updateaccountvalue]
     def updateAccountValue(self, key: str, val: str, currency: str,
                            accountName: str):
@@ -332,8 +341,6 @@ class TestApp(TestWrapper, TestClient):
         print("Account download finished:", accountName)
 
     # ! [accountdownloadend]
-
-
 
 
 def main():
