@@ -153,8 +153,24 @@ class TestWrapper(wrapper.EWrapper):
             # print("TestClient.wrapMeth2reqIdIdx", self.wrapMeth2reqIdIdx)
 
 
-# ! [socket_init]
-class TestApp(TestWrapper, TestClient):
+class ReducedTwsApp(TestWrapper, TestClient):
+    """
+    This is the same as TestApp in Program.py but this one has been,
+    for easier usage, reduced to the required functionality only.
+
+    To add more functionality, copy here the methods you want from TestApp.
+
+    When the connection is established, TWS will call the method nextValidId.
+    Once that happens, we can add the requests that we want. In this case,
+    we call the method reqAccountUpdates (which is inside accountOperations_req
+    that gets called after nextValidId is received). After that call,
+    TWS API will update us with the account info by calling the methods
+    updateAccountValue and updatePortfolio.
+
+    In those two methods we call the functions that have been previously set
+    to be called in case of account updates (see stoploss.py).
+    """
+
     def __init__(self):
         TestWrapper.__init__(self)
         TestClient.__init__(self, wrapper=self)
@@ -304,6 +320,9 @@ class TestApp(TestWrapper, TestClient):
         if key == "UnrealizedPnL":
             for c in unrealized_pnl_callbacks:
                 c(val, currency)
+        elif key == "NetLiquidation":
+            for c in net_liquid_value_callbacks:
+                c(val, currency)
 
     # ! [updateaccountvalue]
 
@@ -321,6 +340,10 @@ class TestApp(TestWrapper, TestClient):
               "MarketValue:", marketValue, "AverageCost:", averageCost,
               "UnrealizedPNL:", unrealizedPNL, "RealizedPNL:", realizedPNL,
               "AccountName:", accountName)
+
+        if contract.secType == "STK":
+            for c in position_pnl_callbacks:
+                c(contract, position)
 
     # ! [updateportfolio]
 
@@ -343,60 +366,76 @@ class TestApp(TestWrapper, TestClient):
     # ! [accountdownloadend]
 
 
-def main():
-    SetupLogger()
-    logging.debug("now is %s", datetime.datetime.now())
-    logging.getLogger().setLevel(logging.DEBUG)
+class EasyTws:
+    """
+    A wrapper that makes it easier to use the TWS API.
 
-    cmdLineParser = argparse.ArgumentParser("api tests")
-    cmdLineParser.add_argument("-p", "--port", action="store", type=int,
-                               dest="port", default=7497, help="The TCP port to use")
-    args = cmdLineParser.parse_args()
-    print("Using args", args)
-    logging.debug("Using args %s", args)
-    # print(args)
+    run() must be called before other calls are made.
+    """
+
+    app = None
+
+    def run(self):
+        SetupLogger()
+        logging.debug("now is %s", datetime.datetime.now())
+        logging.getLogger().setLevel(logging.DEBUG)
+
+        # enable logging when member vars are assigned
+        from ibapi import utils
+        from ibapi.order import Order
+        Order.__setattr__ = utils.setattr_log
+        from ibapi.contract import Contract, UnderComp
+        Contract.__setattr__ = utils.setattr_log
+        UnderComp.__setattr__ = utils.setattr_log
+        from ibapi.tag_value import TagValue
+        TagValue.__setattr__ = utils.setattr_log
+        TimeCondition.__setattr__ = utils.setattr_log
+        ExecutionCondition.__setattr__ = utils.setattr_log
+        MarginCondition.__setattr__ = utils.setattr_log
+        PriceCondition.__setattr__ = utils.setattr_log
+        PercentChangeCondition.__setattr__ = utils.setattr_log
+        VolumeCondition.__setattr__ = utils.setattr_log
+
+        try:
+            self.app = ReducedTwsApp()
+            self.app.connect("127.0.0.1", 7497, clientId=0)
+            print("serverVersion:%s connectionTime:%s" % (self.app.serverVersion(),
+                                                          self.app.twsConnectionTime()))
+            self.app.run()
+        except:
+            raise
+        finally:
+            self.app.dumpTestCoverageSituation()
+            self.app.dumpReqAnsErrSituation()
+
+    def cancel_all_orders(self):
+        print("Sending a request to cancel all open orders.")
+        self.app.reqGlobalCancel()
+
+    def send_sell_market_order(self, contract, position):
+        new_contract = Contract()
+        new_contract.symbol = contract.symbol
+        new_contract.secType = contract.secType
+        new_contract.currency = contract.currency
+        new_contract.exchange = "SMART"
+
+        print("---Placing order, contract settings:")
+        print("\t", new_contract.symbol)
+        print("\t", new_contract.secType)
+        print("\t", new_contract.currency)
+        print("\t", new_contract.exchange)
+
+        self.app.placeOrder(
+            self.app.nextValidOrderId,
+            new_contract,
+            OrderSamples.MarketOrder("SELL", position)
+        )
 
 
-    # enable logging when member vars are assigned
-    from ibapi import utils
-    from ibapi.order import Order
-    Order.__setattr__ = utils.setattr_log
-    from ibapi.contract import Contract, UnderComp
-    Contract.__setattr__ = utils.setattr_log
-    UnderComp.__setattr__ = utils.setattr_log
-    from ibapi.tag_value import TagValue
-    TagValue.__setattr__ = utils.setattr_log
-    TimeCondition.__setattr__ = utils.setattr_log
-    ExecutionCondition.__setattr__ = utils.setattr_log
-    MarginCondition.__setattr__ = utils.setattr_log
-    PriceCondition.__setattr__ = utils.setattr_log
-    PercentChangeCondition.__setattr__ = utils.setattr_log
-    VolumeCondition.__setattr__ = utils.setattr_log
-
-    # from inspect import signature as sig
-    # import code code.interact(local=dict(globals(), **locals()))
-    # sys.exit(1)
-
-    # tc = TestClient(None)
-    # tc.reqMktData(1101, ContractSamples.USStockAtSmart(), "", False, None)
-    # print(tc.reqId2nReq)
-    # sys.exit(1)
-
-    try:
-        app = TestApp()
-        # ! [connect]
-        app.connect("127.0.0.1", args.port, clientId=0)
-        print("serverVersion:%s connectionTime:%s" % (app.serverVersion(),
-                                                      app.twsConnectionTime()))
-        # ! [connect]
-        app.run()
-    except:
-        raise
-    finally:
-        app.dumpTestCoverageSituation()
-        app.dumpReqAnsErrSituation()
-
+"""
+Use the lists below to add functions that you want
+to be called when TWS returns data to us.
+"""
 unrealized_pnl_callbacks = []
-
-if __name__ == "__main__":
-    main()
+position_pnl_callbacks = []
+net_liquid_value_callbacks = []
