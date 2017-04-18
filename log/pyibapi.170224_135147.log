@@ -1,0 +1,291 @@
+(MainThread) 170224_13:51:47.163 DEBUG IB_stop_loss.py:1491 Using args Namespace(global_cancel=False, port=7497)
+(MainThread) 170224_13:51:47.171 DEBUG client.py:71 140404962317312 connState: None -> 0
+(MainThread) 170224_13:51:47.178 DEBUG client.py:131 Connecting to 127.0.0.1:7497 w/ id:0
+(MainThread) 170224_13:51:47.179 DEBUG client.py:71 140404962317312 connState: 0 -> 1
+(MainThread) 170224_13:51:47.179 DEBUG client.py:144 msg b'\x00\x00\x00\tv100..109'
+(MainThread) 170224_13:51:47.180 DEBUG client.py:146 REQUEST b'API\x00\x00\x00\x00\tv100..109'
+(MainThread) 170224_13:51:47.180 DEBUG connection.py:71 acquiring lock
+(MainThread) 170224_13:51:47.180 DEBUG connection.py:73 acquired lock
+(MainThread) 170224_13:51:47.181 DEBUG connection.py:80 releasing lock
+(MainThread) 170224_13:51:47.181 DEBUG connection.py:82 release lock
+(MainThread) 170224_13:51:47.181 DEBUG connection.py:84 sendMsg: sent: 17
+(MainThread) 170224_13:51:47.186 DEBUG decoder.py:977 no fields
+(MainThread) 170224_13:51:47.186 DEBUG connection.py:90 acquiring lock
+(MainThread) 170224_13:51:47.186 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:47.186 DEBUG connection.py:115 len 30 raw:b'\x00\x00\x00\x1a109\x0020170224 13:51:46 CAT\x00'|
+(MainThread) 170224_13:51:47.187 DEBUG connection.py:101 releasing lock
+(MainThread) 170224_13:51:47.187 DEBUG connection.py:103 release lock
+(MainThread) 170224_13:51:47.187 DEBUG client.py:156 ANSWER b'\x00\x00\x00\x1a109\x0020170224 13:51:46 CAT\x00'
+(MainThread) 170224_13:51:47.187 DEBUG comm.py:53 read_msg: size: 26
+(MainThread) 170224_13:51:47.187 DEBUG client.py:159 size:26 msg:b'109\x0020170224 13:51:46 CAT\x00' rest:b''|
+(MainThread) 170224_13:51:47.187 DEBUG client.py:161 fields (b'109', b'20170224 13:51:46 CAT')
+(MainThread) 170224_13:51:47.188 DEBUG client.py:167 ANSWER Version:109 time:b'20170224 13:51:46 CAT'
+(MainThread) 170224_13:51:47.188 DEBUG client.py:71 140404962317312 connState: 1 -> 2
+(Thread-2) 170224_13:51:47.188 DEBUG connection.py:90 acquiring lock
+(MainThread) 170224_13:51:47.189 INFO client.py:176 sent startApi
+(Thread-2) 170224_13:51:47.189 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:47.189 INFO client.py:86 REQUEST startApi {}
+(MainThread) 170224_13:51:47.189 DEBUG client.py:203 140404962317312 isConn: 2
+(MainThread) 170224_13:51:47.189 INFO client.py:75 SENDING countReqId_ b'\x00\x00\x00\x0871\x002\x000\x00\x00'
+(MainThread) 170224_13:51:47.189 DEBUG connection.py:71 acquiring lock
+(Thread-2) 170224_13:51:48.190 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:48.190 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:48.191 DEBUG connection.py:103 release lock
+(MainThread) 170224_13:51:48.191 DEBUG connection.py:73 acquired lock
+(Thread-2) 170224_13:51:48.191 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(MainThread) 170224_13:51:48.191 DEBUG connection.py:80 releasing lock
+(Thread-2) 170224_13:51:48.191 DEBUG connection.py:90 acquiring lock
+(MainThread) 170224_13:51:48.191 DEBUG connection.py:82 release lock
+(Thread-2) 170224_13:51:48.192 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:48.192 DEBUG connection.py:84 sendMsg: sent: 12
+(Thread-2) 170224_13:51:48.193 DEBUG connection.py:115 len 142 raw:b'\x00\x00\x00\r15\x001\x00DU15047\x00\x00\x00\x00\x079\x001\x0051\x00\x00\x00\x0054\x002\x00-1\x002104\x00Market data farm connection is OK:ibdemo\x00\x00\x00\x0054\x002\x00-1\x002106\x00HMDS data farm connection is OK:demohmds\x00'|
+(Thread-2) 170224_13:51:48.193 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:48.193 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:48.193 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 142 buf b'\x00\x00\x00\r15\x001\x00DU15047\x00\x00\x00\x00\x079\x001\x0051\x00\x00\x00\x0054\x002\x00-1\x002104\x00Market data farm connection is OK:ibdemo\x00\x00\x00\x0054\x002\x00-1\x002106\x00HMDS data farm connection is OK:demohmds\x00'
+(Thread-2) 170224_13:51:48.193 DEBUG comm.py:53 read_msg: size: 13
+(Thread-2) 170224_13:51:48.193 DEBUG reader.py:40 size:13 msg.size:13 msg:|b'\x00\x00\x00\x079\x001\x0051\x00\x00\x00\x0054\x002\x00-1\x002104\x00Market data farm connection is OK:ibdemo\x00\x00\x00\x0054\x002\x00-1\x002106\x00HMDS data farm connection is OK:demohmds\x00'| buf:||
+(Thread-2) 170224_13:51:48.194 DEBUG comm.py:53 read_msg: size: 7
+(Thread-2) 170224_13:51:48.194 DEBUG reader.py:40 size:7 msg.size:7 msg:|b'\x00\x00\x0054\x002\x00-1\x002104\x00Market data farm connection is OK:ibdemo\x00\x00\x00\x0054\x002\x00-1\x002106\x00HMDS data farm connection is OK:demohmds\x00'| buf:||
+(Thread-2) 170224_13:51:48.194 DEBUG comm.py:53 read_msg: size: 53
+(Thread-2) 170224_13:51:48.194 DEBUG reader.py:40 size:53 msg.size:53 msg:|b'\x00\x00\x0054\x002\x00-1\x002106\x00HMDS data farm connection is OK:demohmds\x00'| buf:||
+(Thread-2) 170224_13:51:48.194 DEBUG comm.py:53 read_msg: size: 53
+(Thread-2) 170224_13:51:48.194 DEBUG reader.py:40 size:53 msg.size:53 msg:|b''| buf:||
+(Thread-2) 170224_13:51:48.195 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:48.195 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:48.197 DEBUG client.py:234 fields (b'15', b'1', b'DU15047')
+(MainThread) 170224_13:51:48.197 DEBUG decoder.py:958 field b'DU15047' 
+(MainThread) 170224_13:51:48.197 DEBUG decoder.py:960 arg DU15047 type <class 'str'>
+(MainThread) 170224_13:51:48.197 DEBUG decoder.py:971 calling <function TestApp.managedAccounts at 0x7fb27782d950> with <__main__.TestApp object at 0x7fb293e75400> ['DU15047']
+(MainThread) 170224_13:51:48.197 INFO wrapper.py:41 ANSWER managedAccounts {'accountsList': 'DU15047'}
+(MainThread) 170224_13:51:48.198 DEBUG client.py:246 conn:1 queue.sz:3
+(MainThread) 170224_13:51:48.198 DEBUG client.py:234 fields (b'9', b'1', b'51')
+(MainThread) 170224_13:51:48.198 DEBUG decoder.py:958 field b'51' 
+(MainThread) 170224_13:51:48.198 DEBUG decoder.py:960 arg 51 type <class 'int'>
+(MainThread) 170224_13:51:48.198 DEBUG decoder.py:971 calling <function TestApp.nextValidId at 0x7fb27782d1e0> with <__main__.TestApp object at 0x7fb293e75400> [51]
+(MainThread) 170224_13:51:48.198 INFO wrapper.py:41 ANSWER nextValidId {'orderId': 51}
+(MainThread) 170224_13:51:48.198 DEBUG IB_stop_loss.py:238 setting nextValidOrderId: 51
+(MainThread) 170224_13:51:48.199 INFO client.py:86 REQUEST reqMarketDataType {'marketDataType': 3}
+(MainThread) 170224_13:51:48.199 DEBUG client.py:203 140404962317312 isConn: 2
+(MainThread) 170224_13:51:48.199 INFO client.py:75 SENDING countReqId_ b'\x00\x00\x00\x0759\x001\x003\x00'
+(MainThread) 170224_13:51:48.199 DEBUG connection.py:71 acquiring lock
+(Thread-2) 170224_13:51:49.196 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:49.197 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:49.197 DEBUG connection.py:103 release lock
+(MainThread) 170224_13:51:49.197 DEBUG connection.py:73 acquired lock
+(Thread-2) 170224_13:51:49.197 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(MainThread) 170224_13:51:49.197 DEBUG connection.py:80 releasing lock
+(Thread-2) 170224_13:51:49.197 DEBUG connection.py:90 acquiring lock
+(MainThread) 170224_13:51:49.197 DEBUG connection.py:82 release lock
+(MainThread) 170224_13:51:49.198 DEBUG connection.py:84 sendMsg: sent: 11
+(MainThread) 170224_13:51:49.198 INFO client.py:86 REQUEST reqManagedAccts {}
+(MainThread) 170224_13:51:49.198 DEBUG client.py:203 140404962317312 isConn: 2
+(MainThread) 170224_13:51:49.198 INFO client.py:75 SENDING countReqId_ b'\x00\x00\x00\x0517\x001\x00'
+(MainThread) 170224_13:51:49.198 DEBUG connection.py:71 acquiring lock
+(Thread-2) 170224_13:51:49.198 DEBUG connection.py:92 acquired lock
+(Thread-2) 170224_13:51:50.200 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:50.200 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:50.200 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:50.200 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:50.200 DEBUG connection.py:90 acquiring lock
+(MainThread) 170224_13:51:50.200 DEBUG connection.py:73 acquired lock
+(MainThread) 170224_13:51:50.201 DEBUG connection.py:80 releasing lock
+(MainThread) 170224_13:51:50.201 DEBUG connection.py:82 release lock
+(MainThread) 170224_13:51:50.201 DEBUG connection.py:84 sendMsg: sent: 9
+(MainThread) 170224_13:51:50.201 DEBUG client.py:246 conn:1 queue.sz:2
+(MainThread) 170224_13:51:50.202 DEBUG client.py:234 fields (b'4', b'2', b'-1', b'2104', b'Market data farm connection is OK:ibdemo')
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:958 field b'-1' 
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:960 arg -1 type <class 'int'>
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:958 field b'2104' 
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:960 arg 2104 type <class 'int'>
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:958 field b'Market data farm connection is OK:ibdemo' 
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:960 arg Market data farm connection is OK:ibdemo type <class 'str'>
+(MainThread) 170224_13:51:50.202 DEBUG decoder.py:971 calling <function TestApp.error at 0x7fb27782d488> with <__main__.TestApp object at 0x7fb293e75400> [-1, 2104, 'Market data farm connection is OK:ibdemo']
+(MainThread) 170224_13:51:50.203 INFO wrapper.py:41 ANSWER error {'reqId': -1, 'errorCode': 2104, 'errorString': 'Market data farm connection is OK:ibdemo'}
+(MainThread) 170224_13:51:50.203 ERROR wrapper.py:49 ERROR -1 2104 Market data farm connection is OK:ibdemo
+(MainThread) 170224_13:51:50.203 DEBUG client.py:246 conn:1 queue.sz:1
+(MainThread) 170224_13:51:50.203 DEBUG client.py:234 fields (b'4', b'2', b'-1', b'2106', b'HMDS data farm connection is OK:demohmds')
+(MainThread) 170224_13:51:50.203 DEBUG decoder.py:958 field b'-1' 
+(MainThread) 170224_13:51:50.203 DEBUG decoder.py:960 arg -1 type <class 'int'>
+(MainThread) 170224_13:51:50.204 DEBUG decoder.py:958 field b'2106' 
+(MainThread) 170224_13:51:50.204 DEBUG decoder.py:960 arg 2106 type <class 'int'>
+(MainThread) 170224_13:51:50.204 DEBUG decoder.py:958 field b'HMDS data farm connection is OK:demohmds' 
+(MainThread) 170224_13:51:50.204 DEBUG decoder.py:960 arg HMDS data farm connection is OK:demohmds type <class 'str'>
+(MainThread) 170224_13:51:50.204 DEBUG decoder.py:971 calling <function TestApp.error at 0x7fb27782d488> with <__main__.TestApp object at 0x7fb293e75400> [-1, 2106, 'HMDS data farm connection is OK:demohmds']
+(MainThread) 170224_13:51:50.204 INFO wrapper.py:41 ANSWER error {'reqId': -1, 'errorCode': 2106, 'errorString': 'HMDS data farm connection is OK:demohmds'}
+(MainThread) 170224_13:51:50.204 ERROR wrapper.py:49 ERROR -1 2106 HMDS data farm connection is OK:demohmds
+(MainThread) 170224_13:51:50.205 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:50.205 DEBUG connection.py:92 acquired lock
+(Thread-2) 170224_13:51:50.205 DEBUG connection.py:115 len 17 raw:b'\x00\x00\x00\r15\x001\x00DU15047\x00'|
+(Thread-2) 170224_13:51:50.205 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:50.206 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:50.206 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 17 buf b'\x00\x00\x00\r15\x001\x00DU15047\x00'
+(Thread-2) 170224_13:51:50.206 DEBUG comm.py:53 read_msg: size: 13
+(Thread-2) 170224_13:51:50.206 DEBUG reader.py:40 size:13 msg.size:13 msg:|b''| buf:||
+(Thread-2) 170224_13:51:50.206 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:50.206 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:50.207 DEBUG client.py:234 fields (b'15', b'1', b'DU15047')
+(MainThread) 170224_13:51:50.209 DEBUG decoder.py:958 field b'DU15047' 
+(MainThread) 170224_13:51:50.210 DEBUG decoder.py:960 arg DU15047 type <class 'str'>
+(MainThread) 170224_13:51:50.210 DEBUG decoder.py:971 calling <function TestApp.managedAccounts at 0x7fb27782d950> with <__main__.TestApp object at 0x7fb293e75400> ['DU15047']
+(MainThread) 170224_13:51:50.210 INFO wrapper.py:41 ANSWER managedAccounts {'accountsList': 'DU15047'}
+(MainThread) 170224_13:51:50.211 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:50.411 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:50.412 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:50.613 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:50.613 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:50.813 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:50.813 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:51.014 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:51.014 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:51.208 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855308>)
+(Thread-2) 170224_13:51:51.208 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:51.208 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:51.208 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:51.208 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:51.209 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:51.214 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:51.215 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:51.415 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:51.415 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:51.616 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:51.616 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:51.816 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:51.816 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:52.017 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:52.017 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:52.210 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:52.210 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:52.210 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:52.210 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:52.210 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:52.210 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:52.217 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:52.217 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:52.418 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:52.418 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:52.618 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:52.619 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:52.819 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:52.819 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:53.020 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:53.020 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:53.212 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855208>)
+(Thread-2) 170224_13:51:53.212 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:53.212 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:53.212 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:53.212 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:53.212 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:53.220 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:53.220 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:53.421 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:53.421 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:53.622 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:53.622 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:53.823 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:53.823 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:54.023 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:54.023 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:54.214 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855308>)
+(Thread-2) 170224_13:51:54.214 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:54.214 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:54.214 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:54.214 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:54.214 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:54.224 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:54.224 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:54.424 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:54.425 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:54.625 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:54.625 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:54.825 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:54.826 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:55.026 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:55.026 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:55.215 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:55.215 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:55.215 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:55.216 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:55.216 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:55.216 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:55.227 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:55.227 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:55.427 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:55.428 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:55.628 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:55.628 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:55.829 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:55.829 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:56.030 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:56.031 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:56.217 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855208>)
+(Thread-2) 170224_13:51:56.218 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:56.218 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:56.218 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:56.218 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:56.218 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:56.231 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:56.231 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:56.432 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:56.433 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:56.633 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:56.634 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:56.834 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:56.834 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:57.035 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:57.035 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:57.220 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855308>)
+(Thread-2) 170224_13:51:57.221 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:57.221 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:57.221 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:57.221 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:57.222 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:57.236 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:57.237 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:57.438 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:57.438 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:57.639 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:57.639 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:57.840 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:57.840 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:58.040 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:58.041 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:58.223 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb2778551c8>)
+(Thread-2) 170224_13:51:58.223 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:58.223 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:58.224 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:58.224 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:58.224 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:58.242 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:58.242 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:58.443 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:58.444 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:58.644 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:58.645 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:58.846 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:58.846 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:59.047 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:59.047 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:51:59.224 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855208>)
+(Thread-2) 170224_13:51:59.225 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:51:59.225 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:51:59.226 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:51:59.226 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:51:59.226 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:51:59.247 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:59.248 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:59.448 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:59.448 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:59.649 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:59.649 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:51:59.849 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:51:59.850 DEBUG client.py:246 conn:1 queue.sz:0
+(MainThread) 170224_13:52:00.050 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:52:00.050 DEBUG client.py:246 conn:1 queue.sz:0
+(Thread-2) 170224_13:52:00.228 DEBUG connection.py:96 exception from recvMsg (<class 'socket.timeout'>, timeout('timed out',), <traceback object at 0x7fb277855308>)
+(Thread-2) 170224_13:52:00.229 DEBUG connection.py:101 releasing lock
+(Thread-2) 170224_13:52:00.229 DEBUG connection.py:103 release lock
+(Thread-2) 170224_13:52:00.230 DEBUG reader.py:34 reader loop, prevBuf.size: 0 recvd size: 0 buf b''
+(Thread-2) 170224_13:52:00.230 DEBUG connection.py:90 acquiring lock
+(Thread-2) 170224_13:52:00.231 DEBUG connection.py:92 acquired lock
+(MainThread) 170224_13:52:00.251 DEBUG client.py:231 queue.get: empty
+(MainThread) 170224_13:52:00.252 DEBUG client.py:246 conn:1 queue.sz:0
